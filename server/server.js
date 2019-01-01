@@ -23,11 +23,12 @@ io.on('connection', (socket) => {
       createdAt: new Date().getTime()
     });
   });
+  socket.on('disconnect', () => {
+    console.log('Offline');
+  });
 });
 
-io.on('disconnect', () => {
-  console.log('Offline');
-});
+
 
 
 server.listen(port, () => {
